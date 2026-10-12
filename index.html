@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CodeCheck - Code Validator</title>
+
+    <!-- Connect the CSS design file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+
+        <!-- Application header -->
+        <header class="header">
+            <div class="logo">Code<span>Check</span></div>
+            <p>Simple Code Structure Validator</p>
+        </header>
+
+        <main class="main-content">
+
+            <!-- Left panel: code editor -->
+            <section class="editor-panel">
+
+                <div class="panel-heading">
+                    <h2>Code Editor</h2>
+
+                    <!-- Select the programming language -->
+                    <select id="language">
+                        <option value="javascript">JavaScript</option>
+                        <option value="java">Java</option>
+                        <option value="python">Python</option>
+                        <option value="cpp">C++</option>
+                    </select>
+                </div>
+
+                <!-- Editor with line numbers -->
+                <div class="editor-wrapper">
+
+                    <!-- Line numbers appear here -->
+                    <div id="lineNumbers" class="line-numbers">1</div>
+
+                    <!-- User types or pastes code here -->
+                    <textarea
+                        id="codeInput"
+                        spellcheck="false"
+                        wrap="off"
+                        placeholder="Paste or type your code here..."
+                    ></textarea>
+
+                </div>
+
+                <!-- Editor buttons -->
+                <div class="button-group">
+                    <button id="validateBtn">Validate Code</button>
+                    <button id="clearBtn" class="secondary-btn">Clear</button>
+                </div>
+
+            </section>
+
+            <!-- Right panel: validation results -->
+            <section class="result-panel">
+                <h2>Validation Results</h2>
+
+                <div id="status" class="status neutral">
+                    Waiting for code...
+                </div>
+
+                <div id="results">
+                    <p class="empty-message">
+                        Your validation results will appear here.
+                    </p>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Application limitation notice -->
+        <footer>
+            CodeCheck checks basic code structure. It is not a full compiler.
+        </footer>
+
+    </div>
+
+    <!-- Connect the JavaScript logic file -->
+    <script src="script.js"></script>
+</body>
+</html>
+    

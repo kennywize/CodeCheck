@@ -1,0 +1,250 @@
+
+/* Reset default spacing */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0b1020;
+    color: #e5e7eb;
+    min-height: 100vh;
+    padding: 30px 16px;
+}
+
+/* Main application container */
+.app-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Header and logo */
+.header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.logo {
+    font-size: 34px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.logo span {
+    color: #a78bfa;
+}
+
+.header p {
+    color: #9ca3af;
+    margin-top: 8px;
+}
+
+/* Two-column layout */
+.main-content {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 20px;
+}
+
+/* Editor and result panels */
+.editor-panel,
+.result-panel {
+    background: #151c30;
+    border: 1px solid #2a3450;
+    border-radius: 14px;
+    padding: 22px;
+    min-width: 0;
+}
+
+.panel-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+h2 {
+    font-size: 19px;
+}
+
+/* Programming language dropdown */
+select {
+    background: #202943;
+    color: #ffffff;
+    border: 1px solid #414e6d;
+    border-radius: 7px;
+    padding: 10px;
+    max-width: 100%;
+}
+
+/* Editor container */
+.editor-wrapper {
+    display: flex;
+    width: 100%;
+    height: 340px;
+    overflow: hidden;
+    background: #090e1b;
+    border: 1px solid #303c59;
+    border-radius: 9px;
+}
+
+/* Line numbers on the left */
+.line-numbers {
+    flex-shrink: 0;
+    width: 48px;
+    height: 100%;
+    overflow: hidden;
+    padding: 15px 10px 15px 0;
+
+    background: #11182a;
+    color: #687792;
+    border-right: 1px solid #303c59;
+
+    font-family: Consolas, monospace;
+    font-size: 14px;
+    line-height: 1.7;
+    text-align: right;
+    white-space: pre;
+    user-select: none;
+}
+
+/* Code input area */
+textarea {
+    flex: 1;
+    width: 0;
+    height: 100%;
+    min-width: 0;
+    resize: none;
+
+    background: #090e1b;
+    color: #d8b4fe;
+    border: none;
+    border-radius: 0;
+    padding: 15px;
+
+    font-family: Consolas, monospace;
+    font-size: 14px;
+    line-height: 1.7;
+    white-space: pre;
+    overflow: auto;
+    outline: none;
+}
+
+textarea:focus {
+    border: none;
+}
+
+/* Editor buttons */
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+button {
+    border: none;
+    border-radius: 8px;
+    padding: 12px 18px;
+    cursor: pointer;
+    font-weight: bold;
+    background: #7c3aed;
+    color: white;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: #6d28d9;
+}
+
+.secondary-btn {
+    background: #303b54;
+}
+
+.secondary-btn:hover {
+    background: #414e6d;
+}
+
+/* Validation status messages */
+.status {
+    padding: 13px;
+    border-radius: 8px;
+    margin: 18px 0;
+    font-weight: bold;
+}
+
+.neutral {
+    background: #202943;
+    color: #cbd5e1;
+}
+
+.success {
+    background: #123c30;
+    color: #86efac;
+}
+
+.error {
+    background: #451e2a;
+    color: #fda4af;
+}
+
+.warning {
+    background: #453519;
+    color: #fcd34d;
+}
+
+/* Individual error and warning cards */
+.result-item {
+    background: #0e1527;
+    border: 1px solid #303b54;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 10px;
+    overflow-wrap: anywhere;
+}
+
+.result-item strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.result-item p {
+    color: #cbd5e1;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.empty-message {
+    color: #9ca3af;
+    line-height: 1.6;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    color: #77829b;
+    font-size: 12px;
+    margin-top: 24px;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 800px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+
+    .logo {
+        font-size: 29px;
+    }
+
+    .editor-wrapper {
+        height: 280px;
+    }
+
+    .editor-panel,
+    .result-panel {
+        padding: 16px;
+    }
+}
